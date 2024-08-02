@@ -1,6 +1,21 @@
 # StrictConcurrency Tips
+This repository shows tips of Swift 6 migrations
 
-### How to switch code
+## Environment
+This project requires Xcode 16 (beta 4+) and iOS simulator.
+
+## Build Schemes
+The project has three build schemes.
+- Swift 5
+- Swift 5 + StrictConcurrency
+- Swift 6
+
+By swiftching the build scheme, you can experience the differences of build settings.
+
+<img width="327" alt="scheme" src="https://github.com/user-attachments/assets/6c2d0af6-1ed4-45be-99b1-2383dc8052d4">
+
+
+## How to Switch Code
 You can use compiler macros like these
 ```swift
 #if swift(<6.0)
