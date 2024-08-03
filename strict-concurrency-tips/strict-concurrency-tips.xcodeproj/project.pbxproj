@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181522592C5DC21500E60E20 /* Playground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181522582C5DC21500E60E20 /* Playground.swift */; };
+		1815225A2C5DC23C00E60E20 /* Playground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181522582C5DC21500E60E20 /* Playground.swift */; };
+		1815225B2C5DC23C00E60E20 /* Playground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181522582C5DC21500E60E20 /* Playground.swift */; };
 		18355F662C4F3578004FC92C /* Module in Frameworks */ = {isa = PBXBuildFile; productRef = 18355F652C4F3578004FC92C /* Module */; };
 		18355F682C4F357C004FC92C /* Module in Frameworks */ = {isa = PBXBuildFile; productRef = 18355F672C4F357C004FC92C /* Module */; };
 		18355F6A2C4F3580004FC92C /* Module in Frameworks */ = {isa = PBXBuildFile; productRef = 18355F692C4F3580004FC92C /* Module */; };
@@ -46,6 +49,7 @@
 		180757D32C4F276400287700 /* libSwift5.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSwift5.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		180757E32C4F279B00287700 /* libSwift5 + StrictConcurrency.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libSwift5 + StrictConcurrency.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		180757EC2C4F279C00287700 /* libSwift6.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSwift6.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		181522582C5DC21500E60E20 /* Playground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -188,6 +192,7 @@
 		180757C82C4F275100287700 = {
 			isa = PBXGroup;
 			children = (
+				181522582C5DC21500E60E20 /* Playground.swift */,
 				184E70952C514E0600ECD9C1 /* 1-MainActor */,
 				184E70C62C54ACD800ECD9C1 /* 2-Sendable */,
 				187A55BB2C59B368009C55D0 /* 3-GlobalVariable */,
@@ -319,6 +324,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				181522592C5DC21500E60E20 /* Playground.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1815225A2C5DC23C00E60E20 /* Playground.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1815225B2C5DC23C00E60E20 /* Playground.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

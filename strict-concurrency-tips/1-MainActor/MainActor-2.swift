@@ -13,7 +13,7 @@ private func present(_ viewController: UIViewController) {
 }
 
 #if swift(<6.0)
-// present2 can be called in a function which is not isolated to MainActor.
+// present can be called in a function which is not isolated to MainActor.
 // However, the code is pointed out as a warning when StrictConcurrency is enabled.
 private func presentCaller(_ viewController: UIViewController) {
     present(viewController)

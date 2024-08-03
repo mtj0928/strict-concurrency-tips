@@ -1,8 +1,16 @@
 # StrictConcurrency Tips
-This repository shows tips of Swift 6 migrations
+Playground where you can experience the differences of Swift 6 migrations and learn the tips.
 
 ## Environment
 This project requires Xcode 16 (beta 4+) and iOS simulator.
+
+## Usage
+Clone this repository and open the xcworkspace.
+```sh
+git clone https://github.com/mtj0928/strict-concurrency-tips
+cd strict-concurrency-tips
+open strict-concurrency-tips.xcworkspace
+```
 
 ## Build Schemes
 The project has three build schemes.
@@ -10,7 +18,7 @@ The project has three build schemes.
 - Swift 5 + StrictConcurrency
 - Swift 6
 
-By swiftching the build scheme, you can experience the differences of build settings.
+By switching the build scheme, you can experience the differences of build settings.
 
 <img width="327" alt="scheme" src="https://github.com/user-attachments/assets/6c2d0af6-1ed4-45be-99b1-2383dc8052d4">
 
