@@ -1,5 +1,5 @@
 // MainActor-3
-// Preconcurrency conformance
+// Preconcurrency conformance / MainActor.assumeIsolated
 
 import Module
 

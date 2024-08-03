@@ -14,22 +14,33 @@ open strict-concurrency-tips.xcworkspace
 
 ## Contents
 This repository has two contents.
-- Plagyground
+- Playground
 - Tips
 
-### Plagyground
+### Playground
 [Playground](https://github.com/mtj0928/strict-concurrency-tips/blob/main/strict-concurrency-tips/Playground.swift) is a place you you can experience the differences.
 For more details, please check [Build Schemes](#build-schemes) and [How to Switch Code](how-to-switch-code)
 
 ### Tips
 This repository also shows tips for strict concurrency checking.
-By switching the build scheem, you can leaen the tips with actual compile checks.
+By switching the build scheme, you can learn the tips with actual compile checks.
 
 #### Index
 1. MainActor
+    - [UIView/UIViewController case](https://github.com/mtj0928/strict-concurrency-tips/blob/main/strict-concurrency-tips/Tips/1-MainActor/MainActor-1.swift)
+    - [Preconcurrency isolation](https://github.com/mtj0928/strict-concurrency-tips/blob/main/strict-concurrency-tips/Tips/1-MainActor/MainActor-2.swift)
+    - [Preconcurrency conformance / MainActor.assumeIsolated](https://github.com/mtj0928/strict-concurrency-tips/blob/main/strict-concurrency-tips/Tips/1-MainActor/MainActor-3.swift)
 2. Sendable
+    - [Actor boundaries](https://github.com/mtj0928/strict-concurrency-tips/blob/main/strict-concurrency-tips/Tips/2-Sendable/Sendable-1.swift)
+    - [Mutable class + Sendable](https://github.com/mtj0928/strict-concurrency-tips/blob/main/strict-concurrency-tips/Tips/2-Sendable/Sendable-2.swift)
+    - [preconcurrency import](https://github.com/mtj0928/strict-concurrency-tips/blob/main/strict-concurrency-tips/Tips/2-Sendable/Sendable-3.swift)
 3. GlobalVariable
+    - [GlobalVariable + Sendable](https://github.com/mtj0928/strict-concurrency-tips/blob/main/strict-concurrency-tips/Tips/3-GlobalVariable/GlobalVariable-1.swift)
+    - [GlobalVariable + Non-Sendable](https://github.com/mtj0928/strict-concurrency-tips/blob/main/strict-concurrency-tips/Tips/3-GlobalVariable/GlobalVariable-2.swift)
 4. Others
+    - [deinit](https://github.com/mtj0928/strict-concurrency-tips/blob/main/strict-concurrency-tips/Tips/4-Others/deinit-1.swift)
+    
+If you want more contents, feel free to make a new issue with an error or warning example.
 
 ## Build Schemes
 The project has three build schemes.
@@ -67,3 +78,8 @@ This tables shows the values of the compiler macros for each target.
 | Swift 5 | false | fase |
 | Swift 5 + StrictConcurrency | false | true |
 | Swift 6 | true | true |
+
+## Reference
+[The Swift Concurrency Migration Guide](https://www.swift.org/migration/documentation/migrationguide) is the official migration guide.
+The contents are updated daily, and they are the most reliable informations.
+This repository also refer the guideline.
