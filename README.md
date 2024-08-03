@@ -19,7 +19,7 @@ This repository has two contents.
 
 ### Playground
 [Playground](https://github.com/mtj0928/strict-concurrency-tips/blob/main/strict-concurrency-tips/Playground.swift) is a place you you can experience the differences.
-For more details, please check [Build Schemes](#build-schemes) and [How to Switch Code](how-to-switch-code)
+For more details, please check [Build Schemes](#build-schemes) and [How to Switch Code](#how-to-switch-code)
 
 ### Tips
 This repository also shows tips for strict concurrency checking.
