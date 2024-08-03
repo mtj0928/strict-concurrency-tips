@@ -53,112 +53,55 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		184E70962C514E1500ECD9C1 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+		181522852C5DC91600E60E20 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				"MainActor-1.swift",
-				"MainActor-2.swift",
-				"MainActor-3.swift",
+				"1-MainActor/MainActor-1.swift",
+				"1-MainActor/MainActor-2.swift",
+				"1-MainActor/MainActor-3.swift",
+				"2-Sendable/Sendable-1.swift",
+				"2-Sendable/Sendable-2.swift",
+				"2-Sendable/Sendable-3.swift",
+				"3-GlobalVariable/GlobalVariable-1.swift",
+				"3-GlobalVariable/GlobalVariable-2.swift",
+				"4-Others/deinit-1.swift",
 			);
 			target = 180757D22C4F276400287700 /* Swift5 */;
 		};
-		184E70972C514E1500ECD9C1 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+		181522862C5DC91600E60E20 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				"MainActor-1.swift",
-				"MainActor-2.swift",
-				"MainActor-3.swift",
+				"1-MainActor/MainActor-1.swift",
+				"1-MainActor/MainActor-2.swift",
+				"1-MainActor/MainActor-3.swift",
+				"2-Sendable/Sendable-1.swift",
+				"2-Sendable/Sendable-2.swift",
+				"2-Sendable/Sendable-3.swift",
+				"3-GlobalVariable/GlobalVariable-1.swift",
+				"3-GlobalVariable/GlobalVariable-2.swift",
+				"4-Others/deinit-1.swift",
 			);
 			target = 180757DB2C4F279B00287700 /* Swift5 + StrictConcurrency */;
 		};
-		184E70982C514E1500ECD9C1 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+		181522872C5DC91600E60E20 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				"MainActor-1.swift",
-				"MainActor-2.swift",
-				"MainActor-3.swift",
-			);
-			target = 180757E42C4F279C00287700 /* Swift6 */;
-		};
-		184E70D22C54ADBC00ECD9C1 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"Sendable-1.swift",
-				"Sendable-2.swift",
-				"Sendable-3.swift",
-			);
-			target = 180757D22C4F276400287700 /* Swift5 */;
-		};
-		184E70D32C54ADBC00ECD9C1 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"Sendable-1.swift",
-				"Sendable-2.swift",
-				"Sendable-3.swift",
-			);
-			target = 180757DB2C4F279B00287700 /* Swift5 + StrictConcurrency */;
-		};
-		184E70D42C54ADBC00ECD9C1 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"Sendable-1.swift",
-				"Sendable-2.swift",
-				"Sendable-3.swift",
-			);
-			target = 180757E42C4F279C00287700 /* Swift6 */;
-		};
-		187A55BE2C59B384009C55D0 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"GlobalVariable-1.swift",
-				"GlobalVariable-2.swift",
-			);
-			target = 180757D22C4F276400287700 /* Swift5 */;
-		};
-		187A55C12C59B40E009C55D0 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"GlobalVariable-1.swift",
-				"GlobalVariable-2.swift",
-			);
-			target = 180757DB2C4F279B00287700 /* Swift5 + StrictConcurrency */;
-		};
-		187A55C22C59B40E009C55D0 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"GlobalVariable-1.swift",
-				"GlobalVariable-2.swift",
-			);
-			target = 180757E42C4F279C00287700 /* Swift6 */;
-		};
-		18F1A4922C5B9A43004BBBC8 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"deinit-1.swift",
-			);
-			target = 180757D22C4F276400287700 /* Swift5 */;
-		};
-		18F1A4932C5B9A43004BBBC8 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"deinit-1.swift",
-			);
-			target = 180757DB2C4F279B00287700 /* Swift5 + StrictConcurrency */;
-		};
-		18F1A4942C5B9A43004BBBC8 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"deinit-1.swift",
+				"1-MainActor/MainActor-1.swift",
+				"1-MainActor/MainActor-2.swift",
+				"1-MainActor/MainActor-3.swift",
+				"2-Sendable/Sendable-1.swift",
+				"2-Sendable/Sendable-2.swift",
+				"2-Sendable/Sendable-3.swift",
+				"3-GlobalVariable/GlobalVariable-1.swift",
+				"3-GlobalVariable/GlobalVariable-2.swift",
+				"4-Others/deinit-1.swift",
 			);
 			target = 180757E42C4F279C00287700 /* Swift6 */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		184E70952C514E0600ECD9C1 /* 1-MainActor */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (184E70962C514E1500ECD9C1 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 184E70972C514E1500ECD9C1 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 184E70982C514E1500ECD9C1 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "1-MainActor"; sourceTree = "<group>"; };
-		184E70C62C54ACD800ECD9C1 /* 2-Sendable */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (184E70D22C54ADBC00ECD9C1 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 184E70D32C54ADBC00ECD9C1 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 184E70D42C54ADBC00ECD9C1 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "2-Sendable"; sourceTree = "<group>"; };
-		187A55BB2C59B368009C55D0 /* 3-GlobalVariable */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (187A55BE2C59B384009C55D0 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 187A55C12C59B40E009C55D0 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 187A55C22C59B40E009C55D0 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "3-GlobalVariable"; sourceTree = "<group>"; };
-		18F1A48D2C5B9A2C004BBBC8 /* 4-Others */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (18F1A4922C5B9A43004BBBC8 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 18F1A4932C5B9A43004BBBC8 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 18F1A4942C5B9A43004BBBC8 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "4-Others"; sourceTree = "<group>"; };
+		1815225C2C5DC91000E60E20 /* Tips */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (181522852C5DC91600E60E20 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 181522862C5DC91600E60E20 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 181522872C5DC91600E60E20 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Tips; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,10 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				181522582C5DC21500E60E20 /* Playground.swift */,
-				184E70952C514E0600ECD9C1 /* 1-MainActor */,
-				184E70C62C54ACD800ECD9C1 /* 2-Sendable */,
-				187A55BB2C59B368009C55D0 /* 3-GlobalVariable */,
-				18F1A48D2C5B9A2C004BBBC8 /* 4-Others */,
+				1815225C2C5DC91000E60E20 /* Tips */,
 				180757D42C4F276400287700 /* Products */,
 				180757FD2C4F320F00287700 /* Frameworks */,
 			);
