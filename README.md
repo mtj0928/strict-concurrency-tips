@@ -2,7 +2,7 @@
 A place where you can experience the differences of concurrency checking with the same same source file and learn the tips.
 
 ## Environment
-This project requires Xcode 16 (beta 4+) and iOS simulator.
+This project requires Xcode 16 (beta 4 or later) and iOS simulator.
 
 ## Usage
 Clone this repository and open the xcworkspace.
