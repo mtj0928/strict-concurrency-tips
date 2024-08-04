@@ -5,59 +5,58 @@ import Module
 
 #if swift(<6.0)
 // From Swift 6.0, a non-Sendable variable cannot be passed to other actors.
-private actor Database {
-    func save(_ object: NonSendableClass) { /* Save object */ }
+private actor FooActor {
+    func doSomething(_ object: NonSendableClass) { /* ... */ }
 }
 
-private struct Repository {
-    let database = Database()
+private struct Foo {
+    let fooActor = FooActor()
 
     func doSomething(_ nonSendable: NonSendableClass) async {
         // This function is not isolated to any actors,
-        // but passes a non-Sendable variable to another actor (Database).
+        // but passes a non-Sendable variable to another actor.
         // A non-Sendable variable cannot cross an actor boundary.
-        await database.save(nonSendable)
+        await fooActor.doSomething(nonSendable)
     }
 }
 #else
 // MARK: - Solution 1 (Recommended)
 
 // A variable needs to be Sendable to cross an actor boundary
-private actor Database1 {
-    func save(_ object: SendableStruct) { /* Save object */ }
+private actor FooActor {
+    func doSomething(_ object: SendableStruct) { /* ... */ }
 }
 
-private struct Repository1 {
-    let database = Database1()
+private struct Foo {
+    let fooActor = FooActor()
 
-    func save(_ sendable: SendableStruct) async {
+    func doSomething(_ sendable: SendableStruct) async {
         // A sendable can be passed to an actor.
-        await database.save(sendable)
+        await fooActor.doSomething(sendable)
     }
 }
 
 // MARK: - Solution 2
 
 // As another solution, attaching `sending` is also options.
-private actor Database2 {
-    func save(_ object: NonSendableClass) { /* Save object */ }
+private actor FooActor2 {
+    func doSomething(_ object: NonSendableClass) { /* ... */ }
 }
 
-private struct Repository2 {
-    let database = Database2()
+private struct Foo2 {
+    let fooActor = FooActor2()
 
-    func save(_ nonSendable: sending NonSendableClass) async {
+    func doSomething(_ nonSendable: sending NonSendableClass) async {
         // A sendable can be passed to an actor.
-        await database.save(nonSendable)
+        await fooActor.doSomething(nonSendable)
     }
 }
 
 // However, you cannot access the variable after passing the argument.
 // So, the situation where this solution is available is very limited.
-private func doSomething_1() async {
+private func doSomething() async {
     let nonSendable = NonSendableClass()
-    let repository = Repository2()
-    await repository.save(nonSendable)
+    await Foo2().doSomething(nonSendable)
     // 🚨 This makes a compile error.
     // nonSendable.doSomething()
 }
