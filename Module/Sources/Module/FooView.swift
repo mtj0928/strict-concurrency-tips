@@ -1,5 +1,7 @@
 @MainActor
-public final class FooView {}
+public final class FooView {
+    public init() {}
+}
 
 public protocol FooViewDelegate {
     /// A delegate function which is called when FooView is tapped.a

@@ -16,8 +16,6 @@ private final class NonSendableObserver {
         // because deinit is not isolated to any actors, but the code accesses to self in MainActor.
         nonSendableObserver?.stop()
     }
-
-    func stop() {}
 }
 #else
 // Only sendable variable can be accessed in the deinit.
@@ -34,8 +32,8 @@ private final class MainActorObserver {
 
     deinit {
         // ⚠️ Capturing the property directly is necessary in this case.
-        Task { [actorObserver] in
-            await actorObserver?.stop()
+        Task { @MainActor [actorObserver] in
+            actorObserver?.stop()
         }
 
         Task {

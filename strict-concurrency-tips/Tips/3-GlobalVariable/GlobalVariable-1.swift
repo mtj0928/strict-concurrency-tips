@@ -11,16 +11,24 @@ private enum Foo {
 }
 
 private func doSomething() {
-    DispatchQueue.global().async {
-        // The global variable can updated in a background thread.
-        Foo.sendableValue = SendableStruct()
-    }
-    Task {
-        // The global variable can updated in non-isolated context.
+    DispatchQueue.main.async {
+        // The global variable can be read/written in the main thread.
+        _ = Foo.sendableValue
         Foo.sendableValue = SendableStruct()
     }
     Task { @MainActor in
-        // The global variable can updated from MainActor.
+        // The global variable can be read/written in MainActor.
+        _ = Foo.sendableValue
+        Foo.sendableValue = SendableStruct()
+    }
+    DispatchQueue.global().async {
+        // The global variable can be read/written in a background thread.
+        _ = Foo.sendableValue
+        Foo.sendableValue = SendableStruct()
+    }
+    Task {
+        // The global variable can be read/written in a non-isolated context.
+        _ = Foo.sendableValue
         Foo.sendableValue = SendableStruct()
     }
 }
@@ -63,51 +71,61 @@ private enum Foo {
     // The cause is the global variable can be accessed from any threads and actors.
     // To prevent the issue, isolating the global variable is one of solutions.
     @MainActor
-    static var sendableValu3 = SendableStruct()
+    static var sendableValue3 = SendableStruct()
 }
 
 private func doSomething2() {
     DispatchQueue.main.async {
         // DispatchQueue.main.async isolates the closure to MainActor.
-        Foo.sendableValu3 = SendableStruct()
+        _ = Foo.sendableValue3
+        Foo.sendableValue3 = SendableStruct()
     }
     Task { @MainActor in
-        Foo.sendableValu3 = SendableStruct()
+        _ = Foo.sendableValue3
+        Foo.sendableValue3 = SendableStruct()
     }
 
     // You cannot update the global variable from others.
     DispatchQueue.global().async {
-        // 🚨 This makes a compile error.
-        // Foo.sendableValu3 = SendableStruct()
+        // 🚨 These make compile errors.
+        // _ = Foo.sendableValu3
+        // Foo.sendableValue3 = SendableStruct()
     }
     Task {
+        // The value can be read.
+        _ = await Foo.sendableValue3
         // 🚨 This also makes a compile error.
-        // Foo.sendableValu3 = SendableStruct()
+        // Foo.sendableValue3 = SendableStruct()
     }
 }
 
 // MARK: - Solution 3 | nonisolated(unsafe)
 
 extension Foo {
-    // The cause is the global variable can be accessed from any threads and actors.
-    // To prevent the issue, isolating the global variable is one of solutions.
-    nonisolated(unsafe) static var sendableValue4 = SendableStruct()
-}
+    nonisolated(unsafe) private static var _sendableValue4 = SendableStruct()
+    static let lock = NSLock()
 
-extension NSLock {
-    static let sendableValue4 = NSLock()
+    // `nonisolated(unsafe)` doesn't prevent from data race, we need to address the issue manually by using like lock.
+    static var sendableValue4: SendableStruct {
+        get {
+            lock.withLock { _sendableValue4 }
+        }
+        set {
+            lock.withLock { _sendableValue4 = SendableStruct() }
+        }
+    }
 }
 
 private func doSomething3() {
     DispatchQueue.global().async {
-        NSLock.sendableValue4.withLock {
-            Foo.sendableValue4 = SendableStruct()
-        }
+        // The value can be read and written in any contexts
+        _ = Foo.sendableValue4
+        Foo.sendableValue4 = SendableStruct()
     }
     Task {
-        NSLock.sendableValue4.withLock {
-            Foo.sendableValue4 = SendableStruct()
-        }
+        // The value can be read and written in any contexts
+        _ = Foo.sendableValue4
+        Foo.sendableValue4 = SendableStruct()
     }
 }
 #endif

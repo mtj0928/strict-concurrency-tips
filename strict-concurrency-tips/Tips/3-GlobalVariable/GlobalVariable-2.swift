@@ -11,17 +11,25 @@ private enum Foo {
 }
 
 private func doSomething() {
-    DispatchQueue.global().async {
-        // The function can be called from a background thread.
-        Foo.nonSendableValue.doSomething()
-    }
-    Task {
-        // The function can be called from a non-isolated context.
-        Foo.nonSendableValue.doSomething()
+    DispatchQueue.main.async {
+        // The variable can be accessed from the main thread.
+        _ = Foo.nonSendableValue
+        Foo.nonSendableValue = NonSendableClass()
     }
     Task { @MainActor in
-        // The function can be called from MainActor.
-        Foo.nonSendableValue.doSomething()
+        // The variable can be accessed from MainActor.
+        _ = Foo.nonSendableValue
+        Foo.nonSendableValue = NonSendableClass()
+    }
+    DispatchQueue.global().async {
+        // The variable can be accessed from a background thread.
+        _ = Foo.nonSendableValue
+        Foo.nonSendableValue = NonSendableClass()
+    }
+    Task {
+        // The variable can be accessed from non-isolated context.
+        _ = Foo.nonSendableValue
+        Foo.nonSendableValue = NonSendableClass()
     }
 }
 #else
@@ -37,24 +45,24 @@ private enum Foo {
 private func doSomething1() {
     DispatchQueue.main.async {
         // DispatchQueue.main.async isolates the closure to MainActor.
-        let nonSendableValue = Foo.nonSendableValue1
-        nonSendableValue.doSomething()
+        _ = Foo.nonSendableValue1
+        Foo.nonSendableValue1 = NonSendableClass()
     }
     Task { @MainActor in
-        let nonSendableValue = Foo.nonSendableValue1
-        nonSendableValue.doSomething()
+        _ = Foo.nonSendableValue1
+        Foo.nonSendableValue1 = NonSendableClass()
     }
 
     // You cannot call the function from others.
     DispatchQueue.global().async {
-        // 🚨 This makes a compile error.
-        // let nonSendableValue = Foo.nonSendableValue1
-        // nonSendableValue.doSomething()
+        // 🚨 These make compile errors.
+        // _ = Foo.nonSendableValue1
+        // Foo.nonSendableValue1 = NonSendableClass()
     }
     Task {
-        // 🚨 This makes a compile error, because the instance cannot be shared between MainActor and non-isolated context.
-        // let nonSendableValue = await Foo.nonSendableValue1
-        // nonSendableValue.doSomething()
+        // 🚨 These make compile errors, because the instance cannot be shared between MainActor and non-isolated context.
+        // _ = Foo.nonSendableValue1
+        // Foo.nonSendableValue1 = NonSendableClass()
     }
 }
 
@@ -70,21 +78,17 @@ extension Foo {
 private func doSomething2() {
     DispatchQueue.main.async {
         // DispatchQueue.main.async isolates the closure to MainActor.
-        let nonSendableValue = Foo.nonSendableValue2
-        nonSendableValue.doSomething()
+        _ = Foo.nonSendableValue2
     }
     Task { @MainActor in
-        let nonSendableValue = Foo.nonSendableValue2
-        nonSendableValue.doSomething()
+        _ = Foo.nonSendableValue2
     }
 
     DispatchQueue.global().async {
-         let nonSendableValue = Foo.nonSendableValue2
-         nonSendableValue.doSomething()
+        _ = Foo.nonSendableValue2
     }
     Task {
-         let nonSendableValue = Foo.nonSendableValue2
-         nonSendableValue.doSomething()
+        _ = Foo.nonSendableValue2
     }
 }
 
@@ -94,6 +98,19 @@ extension Foo {
     // The cause is the global variable can be accessed from any threads and actors.
     // To prevent the issue, isolating the global variable is one of solutions.
     nonisolated(unsafe) static var nonSendableValue3 = NonSendableClass()
+
+    static var ffff: NonSendableClass {
+        get {
+            NSLock.nonSendableValue3.withLock {
+                nonSendableValue3
+            }
+        }
+        set {
+            NSLock.nonSendableValue3.withLock {
+                nonSendableValue3 = newValue
+            }
+        }
+    }
 }
 
 extension NSLock {
@@ -108,6 +125,7 @@ private func doSomething3_1() {
     print(value)
 }
 
+// 🚨 WARNING
 // However this solution is unsafer than a case where the type is Sendable,
 // because not only the global variable but also the instance itself need to be accessed from only a specific thread.
 // This is an example of bad pattern
