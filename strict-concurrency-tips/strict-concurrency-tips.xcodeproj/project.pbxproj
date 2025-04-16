@@ -56,9 +56,10 @@
 		181522852C5DC91600E60E20 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				"1-MainActor/MainActor-1.swift",
-				"1-MainActor/MainActor-2.swift",
-				"1-MainActor/MainActor-3.swift",
+				"1-Actor/Actor-1.swift",
+				"1-Actor/Actor-2.swift",
+				"1-Actor/Actor-3.swift",
+				"1-Actor/Actor-4.swift",
 				"2-Sendable/Sendable-1.swift",
 				"2-Sendable/Sendable-2.swift",
 				"2-Sendable/Sendable-3.swift",
@@ -71,9 +72,10 @@
 		181522862C5DC91600E60E20 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				"1-MainActor/MainActor-1.swift",
-				"1-MainActor/MainActor-2.swift",
-				"1-MainActor/MainActor-3.swift",
+				"1-Actor/Actor-1.swift",
+				"1-Actor/Actor-2.swift",
+				"1-Actor/Actor-3.swift",
+				"1-Actor/Actor-4.swift",
 				"2-Sendable/Sendable-1.swift",
 				"2-Sendable/Sendable-2.swift",
 				"2-Sendable/Sendable-3.swift",
@@ -86,9 +88,10 @@
 		181522872C5DC91600E60E20 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				"1-MainActor/MainActor-1.swift",
-				"1-MainActor/MainActor-2.swift",
-				"1-MainActor/MainActor-3.swift",
+				"1-Actor/Actor-1.swift",
+				"1-Actor/Actor-2.swift",
+				"1-Actor/Actor-3.swift",
+				"1-Actor/Actor-4.swift",
 				"2-Sendable/Sendable-1.swift",
 				"2-Sendable/Sendable-2.swift",
 				"2-Sendable/Sendable-3.swift",

@@ -1,4 +1,4 @@
-// MainActor-2
+// Actor-2
 // Preconcurrency isolation
 
 import UIKit

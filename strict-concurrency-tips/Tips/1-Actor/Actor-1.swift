@@ -1,4 +1,4 @@
-// MainActor-1
+// Actor-1
 // UIView/UIViewController case
 import UIKit
 

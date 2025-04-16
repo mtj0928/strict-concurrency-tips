@@ -9,6 +9,6 @@ let package = Package(
         .library(name: "Module", targets: ["Module"]),
     ],
     targets: [
-        .target(name: "Module"),
+        .target(name: "Module", swiftSettings: [.swiftLanguageMode(.v5), .enableUpcomingFeature("StrictConcurrency")]),
     ]
 )

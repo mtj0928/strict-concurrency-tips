@@ -1,4 +1,4 @@
-// MainActor-3
+// Actor-3
 // Preconcurrency conformance / MainActor.assumeIsolated
 
 import Module
